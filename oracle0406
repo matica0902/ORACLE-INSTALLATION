@@ -1,0 +1,59 @@
+#CHECK ORACLE IF ACTIVE
+[cloudera@quickstart ~]$ ps -ef | grep pmon
+oracle    1918     1  0 19:04 ?        00:00:00 xe_pmon_XE
+cloudera 10468  6630  0 20:53 pts/0    00:00:00 grep pmon
+
+
+#REMOVE OLD-VERSION
+
+
+
+#DOWNLOAD ORACLE PACKAGE
+
+
+
+
+
+#EVERY YUM INSTALL USUALLY PATH
+USR/BIN
+if want install in local you can use 
+1.source  --->make insatll to be binary
+2.binary  --->unzip then set config
+
+
+
+
+#Go to ORACLE_HOME/bin and run( modify~)
+
+./sqlplus /nolog
+
+
+
+#SERVICE RESTART
+sudo service oracle-xe restart
+
+#Defult enviroment setup file location and configuration
+
+1.location
+/etc/init.d/vim oracle-xe
+
+2.part of configuration in install process
+# Save LD_LIBRARY_PATH
+SAVE_LLP=$LD_LIBRARY_PATH
+RETVAL=0
+export ORACLE_HOME=/u01/app/oracle/product/11.2.0/xe
+export ORACLE_SID=XE
+export ORACLE_BASE=/u01/app/oracle
+export PATH=$ORACLE_HOME/bin:$PATH
+LSNR=$ORACLE_HOME/bin/lsnrctl
+SQLPLUS=$ORACLE_HOME/bin/sqlplus
+ORACLE_OWNER=oracle
+LOG="$ORACLE_HOME_LISTNER/listener.log"
+
+#check service 
+ ps aux | grep oracle
+oracle   12963  0.0  0.1 213100  5248 ?        Ssl  22:39   0:00 /u01/app/oracle/product/11.2.0/xe/bin/tnslsnr LISTENER -inherit
+oracle   13034  0.0  0.2 1265940 9872 ?        Ss   22:39   0:00 xe_pmon_XE
+oracle   13039  0.0  0.1 1263664 7708 ?        Ss   22:39   0:01 xe_psp0_XE
+oracle   13044  0.0  0.1 1263664 7428 ?        Ss   22:39   0:01 xe_vktm_XE
+oracle   13051  0.0  0.1 1263664 7620 ?        Ss   22:39   0:00 xe_gen0_XE
