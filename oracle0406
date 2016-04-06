@@ -10,7 +10,7 @@ cloudera 10468  6630  0 20:53 pts/0    00:00:00 grep pmon
 
 #DOWNLOAD ORACLE PACKAGE
 
-
+wget --no-check-certificate-- http://download.oracle.com/otn/linux/oracle11g/xe/oracle-xe-11.2.0-1.0.x86_64.rpm.zip
 
 
 
@@ -18,7 +18,7 @@ cloudera 10468  6630  0 20:53 pts/0    00:00:00 grep pmon
 USR/BIN
 if want install in local you can use 
 1.source  --->make insatll to be binary
-2.binary  --->unzip then set config
+2.binary  --->rpm -ivh oracle-xe-11.2.0-1.0.x86_64.rpm.zip
 
 
 
